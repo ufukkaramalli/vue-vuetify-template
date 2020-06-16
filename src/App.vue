@@ -225,6 +225,7 @@
 </template>
 
 <script>
+import './assets/style.scss'
 import HelloWorld from './components/HelloWorld'
 
 export default {
@@ -235,6 +236,8 @@ export default {
   },
   created () {
     console.log(process.env.NODE_ENV)
+  },
+  methods: {
   },
   data: () => ({
     dialog: false,
