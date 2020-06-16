@@ -73,6 +73,11 @@
           </template>
         </v-list>
       </v-navigation-drawer>
+      <v-system-bar window app>
+      <v-spacer></v-spacer>
+      <v-btn text small tile @click="$i18n.locale = 'en'" :disabled="$i18n.locale == 'en'">EN</v-btn>
+      <v-btn text small tile @click="$i18n.locale = 'tr'" :disabled="$i18n.locale == 'tr'">TR</v-btn>
+    </v-system-bar>
       <v-app-bar
         :clipped-left="$vuetify.breakpoint.lgAndUp"
         app
@@ -84,7 +89,7 @@
           style="width: 300px"
           class="ml-0 pl-4"
         >
-          <span class="hidden-sm-and-down">Google Contacts</span>
+          <span class="hidden-sm-and-down text-uppercase">Idea</span>
         </v-toolbar-title>
         <v-text-field
           flat
@@ -223,9 +228,13 @@
       </v-dialog>
   </v-app>
 </template>
-
+<style lang="scss">
+  @import '@/scss/_variables.scss';
+  .custom-class {
+    border-radius: $border-radius-root;
+  }
+</style>
 <script>
-import './assets/style.scss'
 import HelloWorld from './components/HelloWorld'
 
 export default {
